@@ -5,7 +5,7 @@ import random
 team1 = "Auburn"
 team2 = "Wisconsin"
 
-def randomizer(x,y):
+def randomizer():
     x1 = random.randint(0,10)
     y1 = random.randint(0,10)
 
@@ -13,12 +13,14 @@ def randomizer(x,y):
     print(y1)
 
     if x1 > y1:
-        print("{x} wins the game over {y}!")
+        print(team1 + " wins the game over " + team2 +"!")
     
     elif x1 < y1:
-        print("{y} wins the game over {x}!")
+        print(team2 + " wins the game over " + team1 +"!")
               
     else:
-        print("Somehow they tied?!")
+        print("They tied! Overtime!")
+        return randomizer()
 
-randomizer(team1, team2)
+#Calling Function
+randomizer()
